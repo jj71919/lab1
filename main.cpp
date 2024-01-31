@@ -11,27 +11,39 @@ int main(int argc, const char * argv[]) {
     
     Circle* p3 = new Circle[2];
     
-    p3[0] = obj1;
-    p3[1] = obj2;
+    p3[0] = Circle();
+    p3[1] = Circle(2,1,5);
     (*p1).set(3, 7, 4.2);
-    (*p2).set(2, 4, 3.4);
     p3[0].set(3, 3, 4);
-    p3[1].set(10, 10, 6);
     
+    
+    cout << "Circle 1 was created with the default constructor. Here is the data:" << endl;
     obj1.print();
-    cout <<"Circle 1 area: "<< obj1.area() << endl;
-    cout <<"Circle 2 perimeter: "<< obj2.perimeter() << endl;
-    cout << "Distance between Circle 1 and origin is: " << p3[0].distance() << endl;
+    cout <<"Area: "<< obj1.area() << endl;
+    cout <<"Perimeter: "<< obj1.perimeter() << endl;
+    cout <<"Distance between the center of Circle 1 and the origin is: " << obj1.distance() << endl;
+   
+    cout << "Circle 2 was created with the constructor initializer. Here is the data:" << endl;
     obj2.print();
-    cout << "Distance between Circle 1 and Circle 2 is: " << p3[0].distance(p3[1]) << endl;
+    cout <<"Area: "<< obj2.area() << endl;
+    cout <<"Perimeter: "<< obj2.perimeter() << endl;
+    cout <<"Distance between the center of Circle 2 and the origin is: " << obj2.distance() << endl;
     
+    cout << "Circle 3 was created with the default constructor. Here is the data:" << endl;
     p3[0].print();
-    cout <<"Circle 1 area: "<< obj1.area() << endl;
-    cout <<"Circle 2 perimeter: "<< obj2.perimeter() << endl;
-    cout << "Distance between Circle p3[0] and origin is: " << p3[0].distance() << endl;
+    cout <<"Area: "<< p3[0].area() << endl;
+    cout <<"Perimeter: "<< p3[0].perimeter() << endl;
+    cout <<"Distance between the center of Circle 3 and the origin is: " << p3[0].distance() << endl;
+    
+    cout << "Circle 4 was created with the constructor initializer. Here is the data:" << endl;
     p3[1].print();
-    cout << "Distance between Circle p3[0] and Circle p3[1] is: " << p3[0].distance(p3[1]) << endl;
+    cout <<"Area: "<< p3[1].area() << endl;
+    cout <<"Perimeter: "<< p3[1].perimeter() << endl;
+    cout <<"Distance between the center of Circle 4 and the origin is: " << p3[1].distance() << endl << endl;
     
-    
+    cout << "Distance from the center of Circle 1 to the center of Circle 2 is: " << obj1.distance(obj2) << endl;
+    cout << "Distance from the center of Circle 3 to the center of Circle 4 is: " << p3[0].distance(p3[1]) << endl;
+}
+
 }
 
